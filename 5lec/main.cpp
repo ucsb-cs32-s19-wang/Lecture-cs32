@@ -27,6 +27,13 @@ using namespace std;
 //      step 3:                 1 2|3 4 5
 //      step 4:                 1|2 3 4 5           |   (N*(N+1))/2 == O((N^2)/2+N/2) => O(N^2+N) => O(N^2)
 
+//  - insertion sort
+//      worst case:              5 4 3 2 1 and make it to ascending order
+//      step 1:                  4 5 3 2 1
+//      step 2:                  3 4 5 2 1
+//      step 3:                  2 3 4 5 1
+//      step 4:                  1 2 3 4 5           |   (N*(N+1))/2 == O((N^2)/2+N/2) => O(N^2+N) => O(N^2)      
+
 void printArray(int a[], size_t size){
     for(int i = 0; i < size; i++) cout << "a[" << i << "] = " << a[i] <<endl;
 }
@@ -71,7 +78,21 @@ void selectionSort(int a[], size_t size){
     }
 }
 
+void insertionSort(int a[], size_t size){
+    int item, shiftIndex;
+    for(size_t i = 1; i < size; i++){
+        item = a[i];
+        shiftIndex = i-1;   // keep track of the left neighbor
+        while(shiftIndex >= 0 && a[shiftIndex] > item){
+            a[shiftIndex+1] = a[shiftIndex];
+            shiftIndex--;       // going to the left
+        }
+        a[shiftIndex + 1] = item;
+    }
+}
+
 void bubble(){
+    cout << "\t\t---------------------------------BUBBLE SORT------------------------------------" <<endl;
     int a[] = {5, 4, 3, 2, 1};
     int b[] = {1, 2, 3, 4, 5};
     int c[] = {2, 5, 10, 123402304, 7, 3, 4};
@@ -89,6 +110,7 @@ void bubble(){
 }
 
 void selection(){
+    cout << "\t\t---------------------------------SELECTION SORT------------------------------------" <<endl;
     int a[] = {5, 4, 3, 2, 1};
     int b[] = {1, 2, 3, 4, 5};
     int c[] = {2, 5, 10, 123402304, 7, 3, 4};
@@ -105,10 +127,27 @@ void selection(){
     printArray(c, 7);
 }
 
+void insertion(){
+    cout << "\t\t---------------------------------INSERTION SORT------------------------------------" <<endl;
+    int a[] = {5, 4, 3, 2, 1};
+    int b[] = {1, 2, 3, 4, 5};
+    int c[] = {2, 5, 10, 123402304, 7, 3, 4};
+
+    insertionSort(a, 5);
+    insertionSort(b, 5);
+    insertionSort(c, 7);
+
+    cout << "\t--------array: a--------" <<endl;
+    printArray(a, 5);
+    cout << "\t--------array: b--------" <<endl;
+    printArray(b, 5);
+    cout << "\t--------array: c--------" <<endl;
+    printArray(c, 7);
+}
+
 int main(){
-    cout << "\t\t--------------------------------BUBBLE SORT-------------------------------------" <<endl;
     bubble();
-    cout << "\t\t---------------------------------SELECTION SORT------------------------------------" <<endl;
     selection();
+    insertion();
     return 0;
 }

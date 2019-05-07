@@ -1,0 +1,37 @@
+-----------------------------------------------Testing------------------------------------------------
+首先弄个tddfuncs
+    - 里面可以有个 
+        ASSERT_EQUALS( EXPECTED VALUE, ACTUAL VALUE);
+    - 然后一直overload 
+        ASSERT_EQUALS(int, int)
+        ASSERT_EQUALS(string, string)
+        ASSERT_EQUALS(double, double)
+        ASSERT_EQUALS(template, template)
+
+-----------------------------------------------Inheritance------------------------------------------------
+Some commong lingo:
+    - A person class is the base class of a student
+    - A student is derived class or subclass or child class of a person
+    - the ":" operator means we're inheriting from the person class
+
+    protected:
+        - can have an addititonal protected field
+        - protected members are accessible in the class that defines them 
+            and in classes that inherit from that class
+    
+    public inheritance:
+        When deriving a class from a public base class, 
+        public memebr of the base class become public members of the derived class and protected members
+        of the base class become protected memebres of the derived class.
+
+    protected inheritance:
+        When deriving from a protected base class, public and protected members of the base class
+        become protected members of derived class
+
+    private Inheritance:
+        When deriving from a private base class, public and protected members of the base 
+        class become private members of the derived class.
+
+    Note:
+        A base class' private members are never accessible directly from a derived class,
+        but can be accessed through calls to public and protected members of the base class.

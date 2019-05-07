@@ -34,8 +34,8 @@ int main(){
         // #include <utility>
         // by using .insert(std::pair<int, std::string>(#, string))
         // note: insert does not overwrite something already exists
-    students.insert(std::pair<int, std::string>(5, "Jim One"));
-    std::cout<< "Students[5] = " << students[5] <<std::endl;
+    students.insert(std::pair<int, std::string>(10, "Jim One"));
+    std::cout<< "Students[10] = " << students[10] <<std::endl;
 
     // use equal method to overwrite
     students[5] = "New Jim";
