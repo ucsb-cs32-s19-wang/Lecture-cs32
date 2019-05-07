@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <string>
+#include <iostream>
 class person{
     public:
         person(std::string name, int age);
@@ -9,7 +10,7 @@ class person{
         int getAge();
         void setName(std::string name);
         void setAge(int age);
-
+        ~person() { std::cout << "Destructor in Person" << std::endl; };
     private:
         std::string name;
         int age;
