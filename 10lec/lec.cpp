@@ -5,6 +5,10 @@
 
 using namespace std;
 
+void f1(person& p){
+    cout << p.toString() <<endl;
+}
+
 void objectOnStack(){
     person p1("Richert", 21);
     student s1("Jone Doe", 21, 1234567);
@@ -36,8 +40,39 @@ void destructors(){
     delete s1;  // this will call the person's destructor as well
 }
 
+void polymorphism(){
+    person p1("Richert", 21);
+    cout << p1.toString() <<endl;
+    student s1("Jone Doe", 18, 12345677);
+    cout << s1.toString() <<endl;
+
+    person* p2 = new person("Some one", 18);
+    cout << p2->toString() <<endl;
+    student* s2 = new student("some student", 20, 1234124);
+    cout << s2->toString() <<endl;
+    // ---------------------------------------------------------
+    person* p3 = new student("persong-student", 21, 111111);
+    cout << p3->toString() <<endl;
+
+    student r = student("Richert", 1, 123490);
+    cout << r.toString() <<endl;
+
+    person s = student("T", 13, 12341234);
+    cout << s.toString() <<endl;
+
+    // ---------------------------------------------------------
+    person* t = new student("N", 12, 123444);
+    cout << t->toString() <<endl;
+    cout << "-------" <<endl;
+    cout << "-------" <<endl;
+    cout << "-------" <<endl;
+    f1(r);
+    f1(s);
+    f1(*t);
+}
+
 int main(){
-    destructors();
+    polymorphism();
 
     return 0;
 }

@@ -10,6 +10,7 @@ class student: public person{
         int getStudentID();
         void setStudentID(int studentID);
         std::string getName();
+        virtual std::string toString();
     private:
         int studentID;
 };

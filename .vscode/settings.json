@@ -52,6 +52,14 @@
         "__split_buffer": "cpp",
         "__tree": "cpp",
         "map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "unordered_map": "cpp",
+        "fstream": "cpp",
+        "optional": "cpp",
+        "sstream": "cpp"
     }
 }

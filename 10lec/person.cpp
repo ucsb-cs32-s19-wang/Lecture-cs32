@@ -24,3 +24,7 @@ void person::setName(string name){
 void person::setAge(int age){
     this->age = age;
 }
+
+std::string person::toString(){
+    return "Person - Name : " + this->name + ", age: " + to_string(this->age);
+}

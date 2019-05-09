@@ -10,7 +10,9 @@ class person{
         int getAge();
         void setName(std::string name);
         void setAge(int age);
-        ~person() { std::cout << "Destructor in Person" << std::endl; };
+        virtual ~person() { std::cout << "Destructor in Person" << std::endl; };
+        // use virtual enable polymorphic
+        virtual std::string toString();     // use virtual at any layer
     private:
         std::string name;
         int age;

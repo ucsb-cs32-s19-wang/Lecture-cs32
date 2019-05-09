@@ -13,3 +13,7 @@ string student::getName(){
     // return "STUDENT: "+ name;    ERROR, name isn't accessible
     return "STUDENT: " + person::getName();
 }
+
+string student::toString(){
+    return "student - Name : " + getName() + ", age: " + to_string(getAge()) + ", " + to_string(studentID);
+}
