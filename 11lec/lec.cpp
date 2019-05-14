@@ -103,9 +103,29 @@ void exceptionHandling(){
     cout << "Statement after try/catch block" <<endl;
 }
 
+class A{};
+class B : public A{};
+class C{};
+
+void exceptionOrder(){
+    int value = 0;
+    try{
+        cout << "Enter a positive number" <<endl;
+        cin >> value;
+        if(value < 0) throw A();
+    } catch (C){
+        cout << "Exception of type C caught" << endl;
+    } catch (B) {
+        cout << "Exception of type B caught" <<endl;
+    } catch (A) {
+        cout << "Exception of type A caught" <<endl;
+    }
+}
+
 int main(){ 
     // polyWithPadding();
     // abstractClass();
-    exceptionHandling();
+    // exceptionHandling();
+    exceptionOrder();
     return 0;
 }
