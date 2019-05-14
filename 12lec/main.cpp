@@ -11,13 +11,13 @@ int main(){
     try{
         cout << "Enter a positive number" <<endl;
         cin >> value;
-        if(value < 0) throw B();
+        if(value < 0) throw A();
     } catch (C){
         cout << "Exception of type C caught" << endl;
-    } catch (A) {
-        cout << "Exception of type A caught" <<endl;
     } catch (B) {
         cout << "Exception of type B caught" <<endl;
+    } catch (A) {
+        cout << "Exception of type A caught" <<endl;
     }
     return 0;
 }
